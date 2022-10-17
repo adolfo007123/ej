@@ -8,7 +8,6 @@
 </head>
 <body>
     <script>
-        var alf = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n" ,"ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"];
 
         Array.prototype.ordenar = function() {
             var n, i, k, aux;
@@ -26,16 +25,45 @@
             }
         }
 
-        function primero (){
+        function mayorPal1 (pal1, pal2){
+            var alf = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n" ,"ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"];
             var primero = false;
+            console.log("pal1: "+pal1);
+            console.log("pal2: "+pal2);
+            for (let i = 0; i < pal1.length; i++) {
+                var pos1=-2;
+                var pos2=-1;
+                var aux1 = pal1.substring(i,i+1);
+                console.log("aux1: "+aux1);
+                var aux2 = pal2.substring(i,i+1);
+                console.log("aux2: "+aux2);
+
             
+                if(aux1!=aux2){
+                    for (let j = 0; j < alf.length; j++) {
+                        if(alf[j]==aux1){
+                            console.log("Pos letra 1 en alf: "+j);
+                            pos1=j;
+                        }
+                        if(alf[j]==aux2){
+                            console.log("Pos letra 2 en alf: "+j);
 
-
-
-
+                            pos2=j;
+                        }
+                    }
+                    console.log("pos1: "+pos1);
+                    console.log("pos2: "+pos2);
+                    if(pos1<pos2){
+                        primero=true;
+                        console.log("true y break");
+                    }
+                }
+                if(primero)break;
+            }
 
             return primero;
         }
+        document.write(mayorPal1("zazvczzzz","zavzzzjaaa"));
 
     </script>
 </body>
