@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort con Ñ</title>
+</head>
+<body>
+    <script>
+        var alf = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n" ,"ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"];
+
+        Array.prototype.ordenar = function() {
+            var n, i, k, aux;
+            n = lista.length;
+            console.log(lista); // Mostramos, por consola, la lista desordenada
+            // Algoritmo de burbuja
+            for (k = 1; k < n; k++) {
+                for (i = 0; i < (n - k); i++) {
+                    if (lista[i] > lista[i + 1]) {
+                        aux = lista[i];
+                        lista[i] = lista[i + 1];
+                        lista[i + 1] = aux;
+                    }
+                }
+            }
+        }
+
+        function primero (){
+            var primero = false;
+            
+
+
+
+
+
+            return primero;
+        }
+
+    </script>
+</body>
+</html>
