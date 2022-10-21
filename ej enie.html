@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./sortconenie.js"></script></head>
+<body>
+    <script>
+        
+        //Dados dos vectores de dimensiones desiguales intercalarlos en un tercero. Añadiendo los elementos sobrantes al final
+
+        var v1 = new Array("Logroño", "Ibarra","Ibañez","Zebra","Ramirez");
+        var v2 = new Array("Trafico","Mear","Ratillas");
+        var vv1 = new Array(v1,v2);
+        var vv2 = new Array(v2,v1);
+        var v3 = new Array();
+        var len;
+        v1= ordenar(v1);
+        v2= ordenar(v2);
+        if(v1.length>v2.length){
+            len=v1.length;
+        }else{
+            len = v2.length;
+        }
+        var v3 = new Array();
+
+        for (let j = 0; j < vv1.length; j++) {
+            let aux = new Array();
+            var almacen= new Array();
+
+            for (let i = 0; i < len; i++) {
+                var num1, num2, intro;
+                console.log("intro: "+intro);
+                if(vv1[j][i]!=null){
+                    num1=vv1[j][i];
+                    console.log("num1: "+num1);
+                }
+                if(vv2[j][i]!=null){
+                    num2=vv2[j][i];
+                    console.log("num2: "+num2);
+                }
+                if(num1!=null&&num2!=null){
+                    if(num1<num2){
+                    intro = num1;
+                    almacen.push(num2);
+
+                    }else{
+                        intro = num2;
+                        almacen.push(num1);
+                    }
+                }
+                if(num1!=null&&num2==null){
+                    intro=num1;
+                }
+                if(num2!=null && num1==null){
+                    intro = num2;
+                }
+                
+                for (let h = 0; h < almacen.length; h++) {
+                    if(intro>almacen[h]){
+                        let numAux = almacen[h];
+                        almacen[h]=intro;
+                        intro = almacen[h];
+                    }
+                }
+                console.log("Intro aux: "+intro);
+                aux.push(intro);
+            }    
+
+            var n, m, o, auxB;
+            n = almacen.length;
+            // Algoritmo de burbuja para ordenar los restos sobrantes
+            for (o = 1; o < n; o++) {
+                for (m = 0; m < (n - o); m++) {
+                    if (almacen[m]>almacen[m + 1]) {
+                        auxB = almacen[m];
+                        almacen[m] = almacen[m + 1];
+                        almacen[m + 1] = auxB;
+                    }
+                }
+            }
+            for (let x = 0; x < almacen.length; x++) {
+                aux.push(almacen[x]);
+            }
+            v3.push(aux);
+        }
+        
+        console.log(vv1);
+        console.log(vv2);
+        console.log(v3);
+
+    </script>
+</body>
+</html>
